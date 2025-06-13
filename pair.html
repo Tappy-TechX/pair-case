@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAIR CODE</title>
+    <style>
+        /* Define color palette and fonts */
+        :root {
+            --background-start: #101114;
+            --background-end: #1a1c20;
+            --card-background: #1c1e22;
+            --accent-cyan: #00ffff; /* Changed to Cyan */
+            --accent-cyan-transparent: rgba(0, 255, 255, 0.5); /* Changed to Cyan */
+            --text-primary: #ffffff;
+            --text-secondary: #c0c0c0;
+            --input-bg: #2d2f34;
+            --input-border: #3c3e44;
+        }
+
+        /* Basic Reset and Body Styling */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+            overflow: hidden; /* Hide overflow to keep shapes contained */
+            position: relative;
+            /* Animated Background */
+            background: linear-gradient(45deg, var(--background-start), var(--background-end));
+            animation: change-bg 15s ease-in-out infinite alternate;
+        }
+        
+        /* Keyframes for the background color animation */
+        @keyframes change-bg {
+            0% {
+                background: linear-gradient(45deg, #101114, #1a1c20);
+            }
+            50% {
+                background: linear-gradient(45deg, #1a1c20, #222428);
+            }
+            100% {
+                background: linear-gradient(45deg, #101114, #1a1c20);
+            }
+        }
+
+        /* Decorative shapes in the background */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 255, 255, 0.05); /* Cyan tint */
+            border: 1px solid rgba(0, 255, 255, 0.1); /* Cyan tint */
+            z-index: 0;
+            animation: rotate-shape 20s linear infinite;
+        }
+
+        body::before {
+            top: 5%;
+            left: 5%;
+        }
+
+        body::after {
+            bottom: 5%;
+            right: 5%;
+            animation-direction: reverse; /* Rotate in the opposite direction */
+        }
+
+        @keyframes rotate-shape {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /* Main Card Container */
+        .card {
+            background-color: var(--card-background);
+            border-radius: 24px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Ensure card is above background shapes */
+            /* The glowing border effect - now in Cyan */
+            box-shadow: 0 0 25px var(--accent-cyan-transparent), 0 0 50px var(--accent-cyan-transparent);
+            border: 1px solid var(--accent-cyan-transparent);
+        }
+
+        /* Header Section */
+        .header {
+            margin-bottom: 2rem;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--accent-cyan);
+            /* Glow effect for the text - now in Cyan */
+            text-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan-transparent);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .instruction {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin: 2rem 0;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .input-field::placeholder {
+            color: #888;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan-transparent);
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--accent-cyan);
+            color: var(--card-background);
+            box-shadow: 0 0 15px var(--accent-cyan);
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 25px var(--accent-cyan), 0 0 35px var(--accent-cyan-transparent);
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 5px var(--accent-cyan-transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      AUDIO ELEMENT
+      - The 'autoplay' attribute may be blocked by browsers until the user interacts with the page.
+      - The 'muted' attribute is included as requested.
+      - The 'loop' attribute ensures the audio repeats.
+      - IMPORTANT: Replace 'path/to/your/audio.mp3' with the actual path to your audio file.
+    -->
+    <audio src="https://files.catbox.moe/l9319m.mp3" autoplay loop muted></audio>
+
+    <main class="card">
+        <header class="header">
+            <h1 class="title">SHADOW-XTECH<br>PAIR</h1>
+            <h2 class="subtitle">Link With Phone Number</h2>
+            <p class="instruction">Enter your number with country code</p>
+        </header>
+
+        <form>
+            <div class="form-group">
+                <input type="tel" id="phone-number" class="input-field" placeholder="+254759000340">
+            </div>
+
+            <button type="button" class="btn">
+                Get Pairing Code
+            </button>
+        </form>
+
+        <footer class="footer">
+            Powered By Black-Tappy
+        </footer>
+    </main>
+
+</body>
+</html>
