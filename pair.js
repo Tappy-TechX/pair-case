@@ -75,7 +75,7 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "POPKID;;;" + string_session;
+                        let md = "Shadow-Xtech~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `> 𝐆ᴇᴛ 𝐑ɪɢʜᴛ 𝐖ɪᴛᴄʜ𝐀 🩷🎀 .
 ╭───❍「 *𝐂ᴏɴɴᴇᴄᴛᴇ𝐃* 」
