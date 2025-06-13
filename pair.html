@@ -1,217 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JawadTechX Pair</title>
-    <style>
-        /* Define color palette and fonts */
-        :root {
-            --background-color: #000000;
-            --card-background: #1a1c20;
-            --accent-cyan: #00ffff;
-            --accent-cyan-transparent: rgba(0, 255, 255, 0.5);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --input-bg: #2c2f36;
-            --input-border: #3a3d44;
-            --youtube-red: #ff0000;
-            --whatsapp-green: #25d366;
-            --github-blue: #007bff; /* As seen in the image */
-            --icon-bg-gray: #333333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PAIR CODE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary-color: #00ffff;
+      --secondary-color: #ffffff;
+      --accent-color: #000000;
+      --text-color: #000000;
+      --background-color: #808080;
+      --hover-color: #f5f5f5;
+      --border-color: rgba(0, 0, 0, 0.1);
+    }
 
-        /* Basic Reset and Body Styling */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--background-color);
+    body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             color: var(--text-primary);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 1rem;
-        }
-
-        /* Main Card Container */
-        .card {
-            background-color: var(--card-background);
-            border-radius: 20px;
-            padding: 2rem;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
+            overflow: hidden; /* Hide overflow to keep shapes contained */
             position: relative;
-            /* The glowing border effect */
-            box-shadow: 0 0 20px var(--accent-cyan-transparent), 0 0 40px var(--accent-cyan-transparent);
-            border: 1px solid var(--accent-cyan-transparent);
-        }
-
-        /* Header Section */
-        .header {
-            margin-bottom: 1.5rem;
-        }
-
-        .logo-container {
-            width: 80px;
-            height: 80px;
-            background-color: var(--accent-cyan);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 1rem auto;
-            /* Glow effect for the logo */
-            box-shadow: 0 0 15px var(--accent-cyan), 0 0 25px var(--accent-cyan);
-        }
-
-        .logo-container .icon {
-            width: 40px;
-            height: 40px;
-            color: var(--card-background);
-        }
-
-        .title {
-            font-size: 1.75rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
+            /* Animated Background */
+            background: linear-gradient(45deg, var(--background-start), var(--background-end));
+            animation: change-bg 15s ease-in-out infinite alternate;
         }
         
-        .title .highlight {
-            color: var(--accent-cyan);
-            /* Glow effect for the text */
-            text-shadow: 0 0 8px var(--accent-cyan);
+        /* Keyframes for the background color animation */
+        @keyframes change-bg {
+            0% {
+                background: linear-gradient(45deg, #101114, #1a1c20);
+            }
+            50% {
+                background: linear-gradient(45deg, #1a1c20, #222428);
+            }
+            100% {
+                background: linear-gradient(45deg, #101114, #1a1c20);
+            }
         }
 
-        .subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-        
-        /* Social Icons */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            transition: transform 0.2s ease;
-        }
-        
-        .social-icon:hover {
-            transform: scale(1.1);
+        /* Decorative shapes in the background */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 255, 255, 0.05); /* Cyan tint */
+            border: 1px solid rgba(0, 255, 255, 0.1); /* Cyan tint */
+            z-index: 0;
+            animation: rotate-shape 20s linear infinite;
         }
 
-        .social-icon .icon {
-            width: 24px;
-            height: 24px;
+        body::before {
+            top: 5%;
+            left: 5%;
         }
 
-        .youtube { background-color: var(--youtube-red); box-shadow: 0 0 10px var(--youtube-red); }
-        .github-blue { background-color: var(--github-blue); box-shadow: 0 0 10px var(--github-blue); }
-        .whatsapp { background-color: var(--whatsapp-green); box-shadow: 0 0 10px var(--whatsapp-green); }
-        .github-gray { background-color: var(--icon-bg-gray); border: 1px solid var(--text-secondary); }
-
-        /* Form Styling */
-        .form-group {
-            margin-bottom: 1rem;
-            text-align: left;
+        body::after {
+            bottom: 5%;
+            right: 5%;
+            animation-direction: reverse; /* Rotate in the opposite direction */
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--accent-cyan);
+        @keyframes rotate-shape {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
-        .input-field {
-            width: 100%;
-            background-color: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-radius: 8px;
-            padding: 12px;
-            color: var(--text-primary);
-            font-size: 1rem;
-        }
 
-        .input-field:focus {
-            outline: none;
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 8px var(--accent-cyan-transparent);
-        }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background: var(--background-color);
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+    }
 
-        .example-text {
-            text-align: left;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        /* Buttons */
-        .btn {
-            width: 100%;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 16px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .btn-primary {
-            background-color: var(--accent-cyan);
-            color: var(--card-background);
-            box-shadow: 0 0 12px var(--accent-cyan);
-        }
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+    }
 
-        .btn-primary:hover {
-            box-shadow: 0 0 20px var(--accent-cyan);
-            filter: brightness(1.1);
-        }
-        
-        .btn-primary .icon {
-            width: 18px;
-            height: 18px;
-        }
+    .subtitle {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
+    }
 
-        .result-placeholder {
-            background-color: var(--input-bg);
-            color: var(--text-primary);
-            margin-top: 1rem;
-            cursor: not-allowed;
-        }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
 
-        /* Footer */
-        .footer {
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-      </style>
+    .social-icons a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a.youtube { background: #FF0000; }
+    .social-icons a.telegram { background: #0088cc; }
+    .social-icons a.whatsapp { background: #0cfa10; }
+    .social-icons a.github { background: #333; }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--background-color);
+      color: var(--text-color);
+      font-size: 15px;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .generate-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary-color);
+      border: none;
+      border-radius: 12px;
+      color: var(--secondary-color);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 16px;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .code-display {
+      background: var(--hover-color);
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid var(--border-color);
+    }
+
+    .copy-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--hover-color);
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .copy-btn:hover {
+      background: var(--background-color);
+      border-color: var(--primary-color);
+    }
+
+    .success-message {
+      color: #000aff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .error-message {
+      color: #e74c3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .loading {
+      display: none;
+      text-align: center;
+      margin: 16px 0;
+    }
+
+    .loading i {
+      font-size: 24px;
+      color: var(--primary-color);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .code-display {
+        font-size: 16px;
+        min-height: 50px;
+      }
+    }
+  </style>
 </head>
 <body>
 <audio id="myAudio" loop muted>
