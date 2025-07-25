@@ -77,31 +77,33 @@ var randomItem = selectRandomItem(items);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
                         let md = "Shadow-Xtech~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `> 𝐆ᴇᴛ 𝐑ɪɢʜᴛ 𝐖ɪᴛᴄʜ𝐀 🩷🎀 .
-╭───❍「 *𝐂ᴏɴɴᴇᴄᴛᴇ𝐃* 」
-┃ 🎀 𝐒ʜᴀᴅᴏᴡ 𝐗ᴛᴇᴄʜ 𝐁ᴏᴛ
-╰───────────❍
-╭───❍「 *𝐁ᴏᴛ 𝐑ᴇᴘᴏ* 」
-┃ [**Here**](https://github.com/Tappy-Black/Shadow-Xtech-V1)!
-╰───────────❍
-╭───❍「 *𝐉ᴏɪɴ 𝐂ʜᴀɴɴᴇ𝐋* 」
-┃ [**Here**](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10) to join!
-╰───────────❍
-╭───❍「 *𝐁ᴏᴛ 𝐎ᴡɴᴇ𝐑* 」
-┃ +254759000340
-╰───────────❍
-╭───❍「 *𝐒ʏꜱᴛᴇᴍ 𝐒ᴛᴀᴛᴜꜱ* 」
-┃ ░░░░░░░░░░░░░░░░░░░ 100%
-╰───────────❍
-╭───❍「 *𝐀ᴜᴛᴏᴍᴀᴛɪᴏ𝐍* 」
-┃𝐏ᴏᴡᴇʀᴇᴅ 𝐁ʏ 𝐁ʟᴀᴄᴋ-𝐓ᴀᴘᴘʏ
-╰───────────❍`; 
+                        let desc = `
+━━━━━━━━━━━━━━━━━━━━━━━  
+📢 *Join the Channel:*  
+🔗 [**Click to Connect**](https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10)
+
+🧠 *Developer Hub:*  
+🛠️ [**Talk to Black-Tappy**](https://wa.me/254756360306)
+
+⭐ *Drop Some Stars:*  
+🌟 [**Show Love on GitHub**](https://github.com/Tappy-Black/Shadow-Xtech-V1)
+
+━━━━━━━━━━━━━━━━━━━━━━━  
+🛜 *System Status:* 100% Online 🔥  
+🔐 *Security:* Rock Solid  
+🚀 *Speed:* Lightning Fast  
+
+➤ _Running on Code & Confidence._  
+➤ _Powered by 🔥 **Black-Tappy™**_  
+✨ *Where tech turns bold.*
+
+*#ShadowXtech #StayConnected #RunSmooth*`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
 title: "𝐒ʜᴀᴅᴏᴡ 𝐗ᴛᴇᴄʜ",
-thumbnailUrl: "https://files.catbox.moe/og4tsk.jpg",
+thumbnailUrl: "https://files.catbox.moe/s1ecnn.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
 mediaType: 1,
 renderLargerThumbnail: true
@@ -117,7 +119,7 @@ text: desc,
 contextInfo: {
 externalAdReply: {
 title: "Ⴊl𐌀Ꮳk𐌕𐌀ႲႲჄ",
-thumbnailUrl: "https://files.catbox.moe/og4tsk.jpg",
+thumbnailUrl: "https://files.catbox.moe/s1ecnn.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029VasHgfG4tRrwjAUyTs10",
 mediaType: 2,
 renderLargerThumbnail: true,
